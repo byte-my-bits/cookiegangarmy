@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2" data-testid="link-home-logo">
           <Skull className="h-7 w-7 text-primary" />
-          <span className="text-lg font-bold tracking-wider uppercase">Dead Zone Survivors</span>
+          <span className="text-lg font-bold tracking-wider uppercase">COOKIEGANGARMY</span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -50,7 +50,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-72 bg-background">
               <div className="flex items-center gap-2 mb-8 mt-4">
                 <Skull className="h-6 w-6 text-primary" />
-                <span className="text-base font-bold tracking-wider uppercase">Dead Zone</span>
+                <span className="text-base font-bold tracking-wider uppercase">COOKIEGANGARMY</span>
               </div>
               <div className="flex flex-col gap-1">
                 {navLinks.map((link) => (

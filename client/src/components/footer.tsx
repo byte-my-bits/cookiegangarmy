@@ -32,7 +32,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Skull className="h-6 w-6 text-primary" />
-              <span className="text-base font-bold tracking-wider uppercase">Dead Zone Survivors</span>
+              <span className="text-base font-bold tracking-wider uppercase">COOKIEGANGARMY</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               A dedicated 7 Days to Die gaming community. Survive together, build together, thrive together.
