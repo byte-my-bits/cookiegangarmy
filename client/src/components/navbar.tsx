@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/rules", label: "Rules" },
   { href: "/community", label: "Community" },
   { href: "/join", label: "Join Us" },
+  { href: "/shop", label: "Shop" },
   { href: "/contact", label: "Contact" },
 ];
 

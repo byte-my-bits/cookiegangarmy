@@ -24,10 +24,10 @@ const rulesSections = [
     badge: "PvP Servers",
     rules: [
       "Raiding is allowed during designated raid hours only (check server-specific schedules).",
-      "No offline raiding. At least one base owner must be online during a raid.",
-      "Do not camp spawn points or trader areas.",
+      "No offline raiding where applicable. At least one base owner must be online during a raid.",
+      "Do not camp spawn points or trader/merchant areas.",
       "Alliances must be declared in the designated Discord channel.",
-      "No using vehicles to clip through base walls or exploit terrain glitches.",
+      "No exploiting game mechanics to clip through walls or terrain.",
     ],
   },
   {
@@ -36,11 +36,11 @@ const rulesSections = [
     title: "Base Building",
     badge: "All Servers",
     rules: [
-      "Claim blocks must be placed within 48 hours of joining. Unprotected builds may be removed.",
-      "Maximum of 2 claim blocks per group on PvP servers, 3 on PvE servers.",
-      "Do not build within 100 blocks of traders, POIs, or other players' bases without permission.",
-      "Sky bases and floating structures are not allowed on any server.",
-      "Clean up unused frames, workstations, and storage. Admins may remove abandoned structures after 14 days.",
+      "Place claim blocks or mark your territory within 48 hours of joining. Unprotected builds may be removed.",
+      "Maximum base claims per group vary by game and server — check server-specific rules.",
+      "Do not build near spawn points, merchants, or other players' bases without permission.",
+      "Sky bases and floating structures are not allowed unless the game supports them natively.",
+      "Clean up unused structures and storage. Admins may remove abandoned builds after 14 days.",
     ],
   },
   {
@@ -90,7 +90,7 @@ export default function Rules() {
       <div className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight mb-2" data-testid="text-rules-title">Server Rules</h1>
         <p className="text-muted-foreground max-w-xl">
-          Please read and understand all rules before joining any server. Ignorance is not an excuse. Rules are enforced consistently across all servers.
+          Please read and understand all rules before joining any server. Rules apply across all games and are enforced consistently.
         </p>
       </div>
 

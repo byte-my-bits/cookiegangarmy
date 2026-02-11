@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Skull } from "lucide-react";
-import { SiDiscord, SiSteam, SiYoutube, SiX } from "react-icons/si";
+import { SiDiscord, SiTwitch, SiYoutube } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 const footerLinks = {
@@ -19,9 +19,8 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: SiDiscord, href: "#", label: "Discord" },
-  { icon: SiSteam, href: "#", label: "Steam" },
+  { icon: SiTwitch, href: "#", label: "Twitch" },
   { icon: SiYoutube, href: "#", label: "YouTube" },
-  { icon: SiX, href: "#", label: "X" },
 ];
 
 export function Footer() {
@@ -35,7 +34,7 @@ export function Footer() {
               <span className="text-base font-bold tracking-wider uppercase">COOKIEGANGARMY</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              A dedicated 7 Days to Die gaming community. Survive together, build together, thrive together.
+              A multi-game community running dedicated servers for 7 Days to Die, Minecraft, Valheim, and Ark: Survival Ascended.
             </p>
           </div>
 
@@ -99,10 +98,10 @@ export function Footer() {
 
         <div className="mt-10 border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground" data-testid="text-copyright">
-            &copy; {new Date().getFullYear()} Dead Zone Survivors. All rights reserved. Not affiliated with The Fun Pimps.
+            &copy; {new Date().getFullYear()} CookieGang Army. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground" data-testid="text-trademark">
-            7 Days to Die is a trademark of The Fun Pimps Entertainment LLC
+            Game trademarks belong to their respective owners.
           </p>
         </div>
       </div>

@@ -1,19 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { SiDiscord, SiSteam, SiYoutube, SiX } from "react-icons/si";
+import { SiDiscord, SiTwitch, SiYoutube } from "react-icons/si";
 import { Heart, Target, Handshake, Crown, Shield, Wrench, Megaphone } from "lucide-react";
 
 const missionValues = [
   {
     icon: Heart,
     title: "Community First",
-    description: "We build a welcoming space where every survivor matters. Our focus is always on the player experience.",
+    description: "We build a welcoming space where every player matters. Our focus is always on the community experience.",
   },
   {
     icon: Target,
     title: "Fair Play",
-    description: "Our servers run with balanced settings and active moderation to ensure everyone gets a fair shot at survival.",
+    description: "Our servers run with balanced settings and active moderation to ensure fair gameplay across all titles.",
   },
   {
     icon: Handshake,
@@ -24,46 +24,46 @@ const missionValues = [
 
 const staffMembers = [
   {
-    name: "Ironclad",
+    name: "LtCook62",
     role: "Founder & Lead Admin",
-    icon: Crown,
-    initials: "IC",
-    bio: "Community founder with 5,000+ hours in 7D2D. Manages server infrastructure and overall community direction.",
+    games: ["7 Days to Die", "Minecraft", "Valheim", "Ark: Survival Ascended"],
+    image: "/images/founder.jpg",
+    bio: "Built CookieGang Army from scratch. Loves cookies, hates zombies. If you see him online, say hi!",
   },
   {
-    name: "ShadowMedic",
-    role: "Senior Admin",
-    icon: Shield,
-    initials: "SM",
-    bio: "Handles player disputes, ban appeals, and community events. Known for organizing the monthly Horde Night tournaments.",
+    name: "Eikthyr",
+    role: "Co-Owner & Server Admin",
+    games: ["7 Days to Die", "Ark: Survival Ascended"],
+    image: "/images/partner1.png",
+    bio: "Can heal your wounds and ban your trolls. Famous for epic Discord roasts and PvP pep talks.",
   },
   {
-    name: "WrenchMonkey",
-    role: "Technical Admin",
-    icon: Wrench,
-    initials: "WM",
-    bio: "Server configuration specialist. Maintains mods, manages performance, and keeps our servers running at peak efficiency.",
+    name: "TheKhamsi",
+    role: "Website Admin",
+    games: [],
+    image: "/images/partner2.png",
+    bio: "If it breaks, he fixes it. If it works, he mods it. Secretly a bluestone assassin.",
   },
   {
     name: "NightHowl",
     role: "Moderator",
-    icon: Shield,
-    initials: "NH",
-    bio: "Active moderator across all servers. Focuses on new player onboarding and enforcing community guidelines.",
+    games: ["7 Days to Die", "Valheim"],
+    image: "/images/nighthowl.png",
+    bio: "Welcomes new players with a howl. Keeps the peace and the memes flowing.",
   },
   {
     name: "BlazeCraft",
     role: "Moderator",
-    icon: Shield,
-    initials: "BC",
-    bio: "PvP server specialist moderator. Manages raid schedules, alliance declarations, and PvP-specific disputes.",
+    games: ["Minecraft", "Ark: Survival Ascended"],
+    image: "/images/blazecraft.png",
+    bio: "PvP master, alliance broker, and raid scheduler. If you need backup, call Blaze.",
   },
   {
     name: "PixelDoc",
     role: "Community Manager",
-    icon: Megaphone,
-    initials: "PD",
-    bio: "Runs our social media, creates content, and organizes community events, giveaways, and collaborations.",
+    games: ["All Games"],
+    image: "/images/pixeldoc.png",
+    bio: "Runs our socials, hosts giveaways, and makes sure everyone feels at home. Loves pixel art and cookies.",
   },
 ];
 
@@ -76,9 +76,9 @@ const socialBlocks = [
     members: "500+",
   },
   {
-    icon: SiSteam,
-    label: "Steam Group",
-    description: "Join our Steam community group for game updates and discussions.",
+    icon: SiTwitch,
+    label: "Twitch",
+    description: "Watch live streams, highlights, and community events on our Twitch channel.",
     href: "#",
     members: "350+",
   },
@@ -89,57 +89,55 @@ const socialBlocks = [
     href: "#",
     members: "1.2K",
   },
-  {
-    icon: SiX,
-    label: "X (Twitter)",
-    description: "Follow us for server announcements, maintenance alerts, and news.",
-    href: "#",
-    members: "200+",
-  },
 ];
 
 export default function Community() {
+  // Group staff by role for structure
+  const founder = staffMembers.find((m) => m.role.includes("Founder"));
+  const partners = staffMembers.filter((m) => m.role.includes("Admin") && !m.role.includes("Founder"));
+  const moderators = staffMembers.filter((m) => m.role.includes("Moderator") || m.role.includes("Community Manager"));
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-12">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-2" data-testid="text-community-title">Our Community</h1>
-        <p className="text-muted-foreground max-w-xl">
-          Dead Zone Survivors was founded in 2023 with a simple goal: create the best 7 Days to Die experience for dedicated players. Here is who we are and what we stand for.
-        </p>
-      </div>
+      {/* Founder/Owner Section - paint-brush accent, large image, bold name/role, highlighted quote */}
+      {founder && (
+        <section className="mb-14" data-testid="section-founder">
+          <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8 bg-primary/10 rounded-xl p-8 shadow-lg overflow-hidden">
+            {/* Paint-brush accent background */}
+            <div className="absolute left-0 top-0 w-48 h-48 bg-primary rounded-full blur-2xl opacity-30 -z-10" />
+            {/* Founder image */}
+            <div className="flex-shrink-0">
+              <img src={founder.image} alt={founder.name} className="rounded-xl w-48 h-48 object-cover border-4 border-primary shadow-lg" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-3xl font-extrabold tracking-tight mb-2 text-primary">{founder.name}</h2>
+              <div className="mb-2">
+                <span className="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold mr-2">{founder.role}</span>
+                <span className="inline-block bg-card/20 text-muted-foreground px-3 py-1 rounded-full text-xs">{founder.games.join(", ")}</span>
+              </div>
+              <blockquote className="italic text-lg text-primary mb-4">"Teamwork divides the tasks and multiplies the success."</blockquote>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-2">{founder.bio}</p>
+              <p className="text-xs text-muted-foreground">Founded CookieGang Army in 2023. Loves cookies, hates zombies.</p>
+            </div>
+          </div>
+        </section>
+      )}
 
-      <section className="mb-14" data-testid="section-mission">
-        <h2 className="text-xl font-bold tracking-tight mb-6">Our Mission</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {missionValues.map((value) => (
-            <Card key={value.title} data-testid={`card-mission-${value.title.toLowerCase().replace(/\s/g, "-")}`}>
-              <CardContent className="p-5">
-                <div className="rounded-md bg-primary/10 p-2.5 text-primary inline-flex mb-3">
-                  <value.icon className="h-5 w-5" />
-                </div>
-                <h3 className="font-semibold text-sm tracking-wide mb-2">{value.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{value.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-14" data-testid="section-staff">
-        <h2 className="text-xl font-bold tracking-tight mb-6">Admin & Staff</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {staffMembers.map((member) => (
-            <Card key={member.name} data-testid={`card-staff-${member.name.toLowerCase()}`}>
-              <CardContent className="p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <Avatar>
-                    <AvatarFallback className="bg-primary/10 text-primary text-sm font-bold">
-                      {member.initials}
-                    </AvatarFallback>
-                  </Avatar>
+      {/* Partners Section - bold header, accent backgrounds */}
+      <section className="mb-14" data-testid="section-partners">
+        <h2 className="text-2xl font-extrabold tracking-tight mb-6 text-primary uppercase">Partners</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {partners.map((member) => (
+            <Card key={member.name} className="bg-primary/10 border-primary/30 border-2 rounded-xl shadow-md" data-testid={`card-partner-${member.name.toLowerCase()}`}> 
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-3">
+                  <img src={member.image} alt={member.name} className="rounded-full w-16 h-16 object-cover border-2 border-primary" />
                   <div className="min-w-0">
-                    <h3 className="font-semibold text-sm tracking-wide truncate">{member.name}</h3>
-                    <Badge variant="outline" className="text-xs mt-0.5">{member.role}</Badge>
+                    <h3 className="font-semibold text-lg tracking-wide truncate text-primary">{member.name}</h3>
+                    <div className="mb-1">
+                      <span className="inline-block bg-primary/20 text-primary px-2 py-0.5 rounded-full text-xs font-semibold mr-2">{member.role}</span>
+                      <span className="inline-block bg-card/20 text-muted-foreground px-2 py-0.5 rounded-full text-xs">{member.games.join(", ")}</span>
+                    </div>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">{member.bio}</p>
@@ -149,12 +147,81 @@ export default function Community() {
         </div>
       </section>
 
+      {/* Join Discord Server Button */}
+      <div className="flex justify-center mt-6 mb-14">
+        <a
+          href="https://discord.gg/wk766UmZ"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-primary text-card font-bold px-6 py-3 rounded-full shadow-lg hover:bg-primary/80 transition text-lg"
+        >
+          Join Discord Server
+        </a>
+      </div>
+
+      {/* Admins & Moderators Section - hidden for now */}
+      {/*
+      <section className="mb-14" data-testid="section-admins">
+        <h2 className="text-2xl font-extrabold tracking-tight mb-6 text-primary uppercase">Admins & Moderators</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {moderators.map((member) => (
+            <Card key={member.name} className="bg-primary/5 border-primary/20 border rounded-xl shadow-md" data-testid={`card-moderator-${member.name.toLowerCase()}`}> 
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-3">
+                  <img src={member.image} alt={member.name} className="rounded-full w-16 h-16 object-cover border-2 border-primary" />
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-lg tracking-wide truncate text-primary">{member.name}</h3>
+                    <div className="mb-1">
+                      <span className="inline-block bg-primary/20 text-primary px-2 py-0.5 rounded-full text-xs font-semibold mr-2">{member.role}</span>
+                      <span className="inline-block bg-card/20 text-muted-foreground px-2 py-0.5 rounded-full text-xs">{member.games.join(", ")}</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">{member.bio}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+      */}
+
+      {/* About the Team Section - paint-brush accent, bold card, geometric overlay, left-aligned large title/text, highlight key phrases */}
+      <section className="mb-14 relative" data-testid="section-about">
+        {/* Geometric pattern overlay */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="w-full h-full bg-[radial-gradient(circle,rgba(255,90,31,0.08)_1px,transparent_1px)] bg-[length:40px_40px]" />
+        </div>
+        <div className="relative flex flex-col md:flex-row items-stretch md:items-center gap-10 p-8 rounded-xl bg-primary/5 shadow-xl overflow-hidden z-10">
+          {/* Paint-brush accent background */}
+          <div className="absolute left-0 top-0 w-72 h-72 bg-primary rounded-full blur-3xl opacity-25 -z-10" />
+          {/* Image card with bold border and shadow */}
+          <div className="flex-shrink-0 flex items-center justify-center">
+            <div className="bg-primary/20 rounded-2xl p-2 shadow-lg border-4 border-primary">
+              <img src="/images/about_team.png" alt="CookieGang Army Team" className="rounded-xl w-[340px] h-[340px] object-cover" />
+            </div>
+          </div>
+          {/* Text content */}
+          <div className="flex-1 flex flex-col justify-center">
+            <h2 className="text-3xl font-extrabold tracking-tight mb-4 text-primary">About the Team</h2>
+            <div className="text-base text-muted-foreground leading-relaxed">
+              <p className="mb-3">
+                <span className="font-semibold text-primary">CookieGang Army</span> is powered by a crew of passionate gamers, modders, and community leaders. We play, build, and laugh together—sometimes at each other, but always for the fun of it. Our founder sets the vision, partners keep the servers running, and our admins & mods make sure every player feels welcome.
+              </p>
+              <p>
+                <span className="font-semibold text-primary">Need help?</span> Want to join a raid? Just want to chat? Our team is here for you. <span className="font-semibold text-primary">Teamwork divides the tasks and multiplies the success.</span> Cookies optional, fun required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Links Section */}
       <section data-testid="section-social">
         <h2 className="text-xl font-bold tracking-tight mb-6">Connect With Us</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {socialBlocks.map((social) => (
             <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
-              <Card className="h-full hover-elevate cursor-pointer" data-testid={`card-social-${social.label.toLowerCase()}`}>
+              <Card className="h-full hover-elevate cursor-pointer" data-testid={`card-social-${social.label.toLowerCase()}`}> 
                 <CardContent className="p-5">
                   <social.icon className="h-6 w-6 text-primary mb-3" />
                   <h3 className="font-semibold text-sm tracking-wide mb-1">{social.label}</h3>
@@ -166,6 +233,18 @@ export default function Community() {
           ))}
         </div>
       </section>
+      {/* Footer with game/shop links */}
+      <footer className="mt-16 border-t pt-8 text-center text-xs text-muted-foreground">
+        <div className="mb-2">
+          <span className="font-semibold">Our Games:</span> 7 Days to Die | Minecraft | Valheim | Ark: Survival Ascended
+        </div>
+        <div className="mb-2">
+          <span className="font-semibold">Shop Links:</span> <a href="#" className="text-primary hover:underline">7D2D Shop</a> | <a href="#" className="text-primary hover:underline">Minecraft Shop</a> | <a href="#" className="text-primary hover:underline">Valheim Shop</a> | <a href="#" className="text-primary hover:underline">Ark Shop</a>
+        </div>
+        <div>
+          &copy; CookieGang Army. All Rights Reserved. Since 2023
+        </div>
+      </footer>
     </div>
   );
 }

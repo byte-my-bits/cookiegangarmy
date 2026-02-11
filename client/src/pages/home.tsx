@@ -20,19 +20,19 @@ const quickNavItems = [
   {
     icon: Users,
     title: "Community",
-    description: "Meet our team, learn about our mission, and connect with survivors.",
+    description: "Meet our team, learn about our mission, and connect with fellow players.",
     href: "/community",
   },
   {
     icon: Swords,
     title: "Join the Fight",
-    description: "Get started with our Discord and learn how to join a server.",
+    description: "Get started with our Discord and learn how to join any of our game servers.",
     href: "/join",
   },
   {
     icon: Map,
     title: "Server Maps",
-    description: "Explore custom and generated maps across our active worlds.",
+    description: "View maps and worlds across all our game servers.",
     href: "/servers",
   },
   {
@@ -57,10 +57,10 @@ export default function Home() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 drop-shadow-lg"
             data-testid="text-hero-title"
           >
-            Survive the <span className="text-primary">Dead Zone</span>
+            Welcome to <span className="text-primary">CookieGang Army</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            A hardcore 7 Days to Die community. Join our servers, team up with fellow survivors, and outlast the apocalypse together.
+            A multi-game community running dedicated servers for 7 Days to Die, Minecraft, Valheim, and Ark: Survival Ascended. Join us and play together.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="#" target="_blank" rel="noopener noreferrer">
@@ -88,10 +88,10 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 py-16" data-testid="section-intro">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3" data-testid="text-intro-title">
-            Welcome to Dead Zone Survivors
+            Welcome to CookieGang Army
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            We are a tight-knit community of 7 Days to Die enthusiasts running dedicated servers with custom configurations, active admins, and a welcoming atmosphere. Whether you are a seasoned survivor or just starting out, there is a place for you here.
+            We are a tight-knit gaming community running dedicated servers across multiple games with custom configurations, active admins, and a welcoming atmosphere. Whether you are a veteran player or just getting started, there is a place for you here.
           </p>
         </div>
 
@@ -120,10 +120,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "4", label: "Active Servers" },
+              { value: "7", label: "Active Servers" },
+              { value: "4", label: "Games" },
               { value: "500+", label: "Community Members" },
               { value: "24/7", label: "Uptime" },
-              { value: "3+", label: "Years Running" },
             ].map((stat) => (
               <div key={stat.label} data-testid={`stat-${stat.label.toLowerCase().replace(/\s/g, "-")}`}>
                 <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{stat.value}</div>

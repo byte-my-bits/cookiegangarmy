@@ -14,32 +14,32 @@ const steps = [
   },
   {
     step: 2,
-    icon: UserPlus,
-    title: "Introduce Yourself",
-    description: "Head to the #introductions channel and tell us a bit about yourself. Include your Steam name and preferred playstyle (PvP, PvE, or both).",
-  },
-  {
-    step: 3,
     icon: Shield,
     title: "Read the Rules",
     description: "Check the #rules channel or visit our Rules page. You must understand and agree to follow all community and server rules.",
   },
   {
+    step: 3,
+    icon: UserPlus,
+    title: "Introduce Yourself",
+    description: "Head to the #introductions channel and tell us a bit about yourself. Include your Steam name and preferred playstyle (PvP, PvE, or both).",
+  },
+  {
     step: 4,
     icon: Download,
     title: "Get the Mods",
-    description: "Some servers use custom mods. Check the #server-info channel for mod lists and installation instructions specific to each server.",
+    description: "Check the #server-info channel for mod lists and installation instructions specific to each game and server.",
   },
   {
     step: 5,
     icon: Server,
     title: "Connect to a Server",
-    description: "Browse our Servers page for connection addresses. Open 7 Days to Die, go to Connect to Server, and paste the address.",
+    description: "Browse our Servers page for connection addresses. Each game has its own connection method — check the details on the server card.",
   },
 ];
 
 const requirements = [
-  "A legitimate copy of 7 Days to Die on Steam",
+  "A legitimate copy of the game you want to play",
   "Discord account (for communication and support)",
   "Microphone recommended but not required",
   "Willingness to follow community rules",
@@ -52,7 +52,7 @@ export default function Join() {
       <div className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight mb-2" data-testid="text-join-title">Join the Community</h1>
         <p className="text-muted-foreground max-w-xl">
-          Ready to survive the apocalypse with us? Follow the steps below to get started on our servers.
+          Ready to join the crew? Follow the steps below to get started on any of our game servers.
         </p>
       </div>
 
@@ -60,11 +60,11 @@ export default function Join() {
         <Card className="border-primary/30 bg-gradient-to-br from-card to-primary/5">
           <CardContent className="p-6 sm:p-8 text-center">
             <SiDiscord className="h-10 w-10 text-primary mx-auto mb-4" />
-            <h2 className="text-xl font-bold tracking-tight mb-2">Dead Zone Survivors Discord</h2>
+            <h2 className="text-xl font-bold tracking-tight mb-2">CookieGang Army Discord</h2>
             <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
               Our Discord server is the central hub for everything. Join to get server addresses, find teammates, get support, and stay updated.
             </p>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.gg/wk766UmZ" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="gap-2 font-semibold tracking-wide uppercase text-sm" data-testid="button-discord-invite">
                 <SiDiscord className="h-4 w-4" />
                 Join Discord Server

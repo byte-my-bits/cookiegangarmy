@@ -12,6 +12,7 @@ export const users = pgTable("users", {
 export const servers = pgTable("servers", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
+  game: text("game").notNull(),
   map: text("map").notNull(),
   mode: text("mode").notNull(),
   status: text("status").notNull().default("online"),

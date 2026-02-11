@@ -33,7 +33,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "support@deadzone-survivors.com",
+    value: "support@cookiegangarmy.com",
     action: null,
     href: null,
   },

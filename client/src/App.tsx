@@ -11,6 +11,7 @@ import Rules from "@/pages/rules";
 import Community from "@/pages/community";
 import Join from "@/pages/join";
 import Contact from "@/pages/contact";
+import Shop from "@/pages/shop";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/community" component={Community} />
       <Route path="/join" component={Join} />
       <Route path="/contact" component={Contact} />
+      <Route path="/shop" component={Shop} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,7 +1,7 @@
-# Dead Zone Survivors - 7 Days to Die Community Website
+# CookieGang Army - Multi-Game Community Website
 
 ## Overview
-A community website for a 7 Days to Die gaming group called "Dead Zone Survivors". Features a dark survival/gaming aesthetic with multiple pages for server listings, rules, community info, joining guides, and contact.
+A community website for a multi-game gaming group called "CookieGang Army". Features a dark gaming aesthetic with multiple pages for server listings, rules, community info, joining guides, and contact.
 
 ## Recent Changes
 - Feb 2026: Initial build - all pages, dark theme, database with seed data
