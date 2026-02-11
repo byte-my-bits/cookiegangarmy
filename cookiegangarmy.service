@@ -1,0 +1,14 @@
+[Unit]
+Description=CookieGang Army App
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/cookiegangarmy
+ExecStart=/usr/bin/npm run dev
+Restart=always
+User=ubuntu
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
